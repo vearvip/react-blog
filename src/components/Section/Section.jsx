@@ -2,16 +2,16 @@ import React from 'react'
 
 import './style/Section.less'
 
-import { Row, Col, Carousel, Button, Avatar } from 'antd'
+import { Row, Col, Carousel, Button, Avatar, Icon } from 'antd'
 
 const imgUrlList = [{
   url: "http://img.zcool.cn/community/019929578109990000012e7e9f003c.jpg",
   key: 'img-1'
 }, {
-  url: "http://i0.hdslb.com/bfs/article/09f1a68f7d0c89af78cc75252cd29f96c1b52618.jpg",
+  url: "http://img.zcool.cn/community/011316578db59e0000018c1bda25ee.jpg",
   key: 'img-2'
 }, {
-  url: "http://img.zcool.cn/community/038e01c56fc7b6432f875a9443eaa25.jpg",
+  url: "http://i0.hdslb.com/bfs/article/1ea86910131747ebec9856c915b846cff89917fb.jpg",
   key: 'img-3'
 }]
 
@@ -24,15 +24,31 @@ const Section = (props) => {
           <Col xs={0} sm={0} md={24} >
             <div className="me">
               <div className="avator-box">
-                <Avatar size="large" icon="user" />
+                <Avatar size={120} icon="user" src="http://b-ssl.duitang.com/uploads/item/201707/27/20170727215047_VAzdC.thumb.700_0.jpeg" className="avator-circle" />
               </div>
               <div className="contact-box">
-                <Button onClick={() => {
-                  carouselDOM.prev()
-                }}>Button</Button>
-                <Button onClick={() => {
-                  carouselDOM.next()
-                }}>Button</Button>
+
+                <Row >
+                  <Col span={24}>
+                    <div className="section-flex-center">
+                      <p>你以为我刀枪不入，我以为你百毒不侵</p>
+                    </div>
+                  </Col>
+                  <Col span={24}>
+                    <div className="section-flex-center">
+                      <Icon type="left" onClick={() => {
+                        carouselDOM.prev()
+                      }} className="icon-style icon-blue"/>
+                      <Icon type="wechat" className="icon-style icon-green"/>
+                      <Icon type="weibo" className="icon-style icon-red"/>
+                      <Icon type="qq" className="icon-style icon-blue"/>
+                      <Icon type="github" className="icon-style icon-grey"/>
+                      <Icon type="right" onClick={() => {
+                        carouselDOM.next()
+                      }} className="icon-style icon-blue"/>
+                    </div>
+                  </Col>
+                </Row>
               </div>
 
             </div>

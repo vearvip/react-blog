@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
-
 import './style/Nav.less'
+
+import QueueAnim from 'rc-queue-anim'
 
 import { Row, Col, Menu, Icon, Button } from 'antd'
 const { SubMenu } = Menu;
+
 
 const navList = [{
   itemKey: 'crown',
@@ -103,62 +105,66 @@ const Nav = (props) => {
         </Col>
         <Col xs={24} sm={24} md={0} className="col">
           <div className="mobile-box">
-            <Button shape="round" onClick={() => {setSideHidden(false)}}>
+            <Button shape="round" onClick={() => { setSideHidden(false) }}>
               <Icon type={true ? 'menu-unfold' : 'menu-fold'} />
             </Button>
             <Button icon="search" shape="round" />
           </div>
         </Col>
-        {
-          sideHidden ? 
-          '' :
-          <Col xs={24} sm={24} md={24} className="col">
-          <div className="mobile-side-box" onClick={() => {setSideHidden(true)}}>
-            <div className="mobile-menu-box" onClick={(e) => {e.stopPropagation()}}>
-              <div className="self-box"></div>
+        <QueueAnim 
+          type={['alpha', 'alpha']}
+          ease={['easeOutQuart', 'easeInOutQuart']}>
+          {
+            sideHidden ?
+              null :
+              [<Col xs={24} sm={24} md={24} className="col" key='side-box'>
+                <div className="mobile-side-box" onClick={() => { setSideHidden(true) }}>
+                  <div className="mobile-menu-box" onClick={(e) => { e.stopPropagation() }}>
+                    <div className="self-box"></div>
 
-              <Menu mode="inline" defaultSelectedKeys={props.defaultSelectedKeys}>
-                {
-                  navList.map(ele => {
-                    return (
-                      'itemArr' in ele <= 0 ?
-                        <Menu.Item key={ele.itemKey}>
-                          <a href={ele.url}>
-                            <Icon type={ele.iconType} />{ele.buttonVal}
-                          </a>
-                          {/* <Link href={ele.url}>
+                    <Menu mode="inline" defaultSelectedKeys={props.defaultSelectedKeys}>
+                      {
+                        navList.map(ele => {
+                          return (
+                            'itemArr' in ele <= 0 ?
+                              <Menu.Item key={ele.itemKey}>
+                                <a href={ele.url}>
+                                  <Icon type={ele.iconType} />{ele.buttonVal}
+                                </a>
+                                {/* <Link href={ele.url}>
                       <a>
                         <Icon type={ele.iconType} />{ele.buttonVal}
                       </a>
                     </Link> */}
-                        </Menu.Item> :
-                        <SubMenu
-                          title={
-                            <span ><Icon type={ele.iconType} />{ele.buttonVal}</span>
-                          }
-                          key={ele.itemKey}
-                        >
-                          <Menu.ItemGroup title="技术">
-                            {
-                              ele.itemArr.map(item => {
-                                return (
-                                  <Menu.Item key={item.itemKey}><Icon type={item.iconType} />{item.buttonVal}</Menu.Item>
-                                )
-                              })
-                            }
-                          </Menu.ItemGroup>
-                        </SubMenu>
-                    )
-                  })
-                }
-              </Menu>
-              <div className="leave-button-box">
-              <Button shape="round" icon="import" onClick={() => {setSideHidden(true)}}/>
-              </div>
-            </div>
-          </div>
-        </Col>
-        }
+                              </Menu.Item> :
+                              <SubMenu
+                                title={
+                                  <span ><Icon type={ele.iconType} />{ele.buttonVal}</span>
+                                }
+                                key={ele.itemKey}
+                              >
+                                <Menu.ItemGroup title="技术">
+                                  {
+                                    ele.itemArr.map(item => {
+                                      return (
+                                        <Menu.Item key={item.itemKey}><Icon type={item.iconType} />{item.buttonVal}</Menu.Item>
+                                      )
+                                    })
+                                  }
+                                </Menu.ItemGroup>
+                              </SubMenu>
+                          )
+                        })
+                      }
+                    </Menu>
+                    <div className="leave-button-box">
+                      <Button shape="round" icon="import" onClick={() => { setSideHidden(true) }} />
+                    </div>
+                  </div>
+                </div>
+              </Col>]
+          }
+        </QueueAnim>
 
       </Row>
     </nav>
