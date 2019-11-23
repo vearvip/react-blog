@@ -64,6 +64,13 @@ const Section = (props) => {
             </div>
             <div className="wave-box-floor"></div>
           </Col>
+          <Col xs={24} sm={24} md={0} >
+            <div className="mobile-wave-img-box">
+              <div className="mobile-wave-img-box-item1"></div>
+              <div className="mobile-wave-img-box-item2"></div>
+            </div>
+            <div className="mobile-wave-box-floor"></div>
+          </Col>
         </Row>
       </div>
       <div className="carousel-box">

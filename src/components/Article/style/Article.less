@@ -1,6 +1,5 @@
 article {
   width: 100%;
-
   position: relative;
   z-index: 3;
 
@@ -14,7 +13,7 @@ article {
     .blog-list-box {
       max-width: 800px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 10px;
 
       .article-box {
         width: 100%;
@@ -31,7 +30,10 @@ article {
           overflow: hidden;
 
           img {
-            width: 130%;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            object-fit: cover;
           }
         }
 
@@ -64,7 +66,10 @@ article {
           overflow: hidden;
 
           img {
-            width: 130%;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            object-fit: cover;
           }
         }
 
@@ -87,6 +92,75 @@ article {
             align-items: flex-end;
             height: 70px;
             padding-left: 30px;
+          }
+        }
+      }
+
+      .mobile-article-box {
+        border-radius: 10px;
+        margin: 20px 0 20px;
+        box-shadow: 0 1px 20px -6px rgba(0, 0, 0, .4);
+
+        .mobile-top-box {
+          background-color: linen;
+          height: 240px;
+          border-radius: 10px 10px 0 0;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            object-fit: cover;
+          }
+        }
+
+        .mobile-bottom-box {
+          display: flex;
+          height: 180px;
+          padding: 20px;
+
+          .mobile-bottom-left-box {
+            flex: 1;
+            overflow: hidden;
+            padding-right: 5px;
+
+            .mobile-bottom-left-item {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              height: 30px;
+              line-height: 30px;
+            }
+
+            .mobile-bottom-left-item-introduce {
+              // display: inline-block;
+              width: 100%;
+              // border: 1px solid red;
+              height: 30px;
+              line-height: 30px;
+              /* 不换行 */
+              white-space: nowrap;
+              /* 内容超出宽度时隐藏超出部分的内容 */
+              overflow: hidden;
+              /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+              text-overflow: ellipsis;
+
+            }
+          }
+
+          .mobile-bottom-right-box {
+            flex-shrink: 0;
+            width: 80px;
+            border-left: 1px dotted #cccccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 18px;
+
+            button {
+              flex-shrink: 0;
+            }
           }
         }
       }
@@ -122,7 +196,7 @@ article {
           display: flex;
           justify-content: flex-start;
           align-items: center;
-          
+
         }
       }
     }
@@ -137,4 +211,16 @@ article {
       justify-content: center;
     }
   }
+}
+
+.pc-title {
+  font-size: 21px;
+  font-weight: bold;
+  color: #1f2f3d;
+}
+
+.mobile-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1f2f3d;
 }
