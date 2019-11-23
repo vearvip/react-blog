@@ -3,7 +3,7 @@ import './style/Nav.less'
 
 import QueueAnim from 'rc-queue-anim'
 
-import { Row, Col, Menu, Icon, Button } from 'antd'
+import { Row, Col,Avatar, Menu, Icon, Button } from 'antd'
 const { SubMenu } = Menu;
 
 
@@ -112,6 +112,7 @@ const Nav = (props) => {
           </div>
         </Col>
         <QueueAnim 
+        duration={700}
           type={['alpha', 'alpha']}
           ease={['easeOutQuart', 'easeInOutQuart']}>
           {
@@ -120,7 +121,30 @@ const Nav = (props) => {
               [<Col xs={24} sm={24} md={24} className="col" key='side-box'>
                 <div className="mobile-side-box" onClick={() => { setSideHidden(true) }}>
                   <div className="mobile-menu-box" onClick={(e) => { e.stopPropagation() }}>
-                    <div className="self-box"></div>
+                    <div className="self-box">
+                      <div className="self-avator-box">
+                        <Avatar size={80} icon="user" src="http://5b0988e595225.cdn.sohucs.com/images/20171231/fb5bab11952b4b7d920b8798c4dc2ec2.jpeg" className="avator-circle" />
+                      </div>
+                      <div className="self-contact-box">
+
+                        <Row >
+                          <Col span={24}>
+                            <div className="section-flex-center">
+                              <p>你以为我刀枪不入，我以为你百毒不侵</p>
+                            </div>
+                          </Col>
+                          <Col span={24}>
+                            <div className="section-flex-center">
+                              <Icon type="wechat" className="icon-style icon-green"/>
+                              <Icon type="weibo" className="icon-style icon-red"/>
+                              <Icon type="qq" className="icon-style icon-blue"/>
+                              <Icon type="github" className="icon-style icon-grey"/>
+                            </div>
+                          </Col>
+                        </Row>
+                      </div>
+
+                    </div>
 
                     <Menu mode="inline" defaultSelectedKeys={props.defaultSelectedKeys}>
                       {

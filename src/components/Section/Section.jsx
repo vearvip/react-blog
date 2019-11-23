@@ -24,7 +24,7 @@ const Section = (props) => {
           <Col xs={0} sm={0} md={24} >
             <div className="me">
               <div className="avator-box">
-                <Avatar size={120} icon="user" src="http://b-ssl.duitang.com/uploads/item/201707/27/20170727215047_VAzdC.thumb.700_0.jpeg" className="avator-circle" />
+                <Avatar size={120} icon="user" src="http://5b0988e595225.cdn.sohucs.com/images/20171231/fb5bab11952b4b7d920b8798c4dc2ec2.jpeg" className="avator-circle" />
               </div>
               <div className="contact-box">
 

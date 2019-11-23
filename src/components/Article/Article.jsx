@@ -119,7 +119,7 @@ const Article = (props) => {
           </Row>
           <div className="say-box">
             <div className="say-left-box">
-              <Avatar src="http://b-ssl.duitang.com/uploads/item/201707/27/20170727215047_VAzdC.thumb.700_0.jpeg" size={50}></Avatar>
+              <Avatar src="http://5b0988e595225.cdn.sohucs.com/images/20171231/fb5bab11952b4b7d920b8798c4dc2ec2.jpeg" size={50}></Avatar>
             </div>
             <div className="say-right-box">
               蚂蚁的企业级产品是一个庞大且复杂的体系。
