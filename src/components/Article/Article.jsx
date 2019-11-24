@@ -83,7 +83,7 @@ const Article = (props) => {
                   <Col span={24} className="mobile-top-box">
                       <img
                         draggable={false}
-                        src="http://pic.vjshi.com/2018-08-18/44bb97f490295451d3553139dea3ffdd/00004.jpg?x-oss-process=style/watermark"
+                        src="https://c-ssl.duitang.com/uploads/item/201802/18/20180218080825_kfgtf.thumb.700_0.jpg"
                         alt="博客预览图" />
                   </Col>
                   <Col span={24} className="mobile-bottom-box">

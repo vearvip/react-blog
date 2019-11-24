@@ -60,7 +60,7 @@ const navList = [{
 }]
 
 const Nav = (props) => {
-  const [sideHidden, setSideHidden] = useState(true)
+  const [sideHidden, setSideHidden] = useState(false)
   return (
     <nav>
       <Row className="row">
@@ -122,6 +122,10 @@ const Nav = (props) => {
                 <div className="mobile-side-box" onClick={() => { setSideHidden(true) }}>
                   <div className="mobile-menu-box" onClick={(e) => { e.stopPropagation() }}>
                     <div className="self-box">
+                        <img 
+                        src="http://img.netbian.com/file/2017/0304/efdcf410af7fea5109b654ec9d94d191.jpg"
+                        alt="隐藏nav背景图"
+                        className="self-bg-img"/>
                       <div className="self-avator-box">
                         <Avatar size={80} icon="user" src="http://5b0988e595225.cdn.sohucs.com/images/20171231/fb5bab11952b4b7d920b8798c4dc2ec2.jpeg" className="avator-circle" />
                       </div>
