@@ -26,6 +26,7 @@ npm run build
 - wordpress 主题 [Sakura](https://github.com/mashirozx/Sakura/)
 - hexo 主题 [hexo-theme-sakura](https://github.com/honjun/hexo-theme-sakura)
 
-在这里十分感谢各位开源的贡献
+在这里十分感谢各位对开源的贡献
+
 
 
