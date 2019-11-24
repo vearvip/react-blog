@@ -60,7 +60,7 @@ const navList = [{
 }]
 
 const Nav = (props) => {
-  const [sideHidden, setSideHidden] = useState(false)
+  const [sideHidden, setSideHidden] = useState(true)
   return (
     <nav>
       <Row className="row">
