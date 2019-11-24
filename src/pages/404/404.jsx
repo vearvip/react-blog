@@ -1,8 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import './style/404.less'
-import { Button } from 'antd';
 
 const F0F = props => {
   return (
@@ -17,8 +16,6 @@ const F0F = props => {
           <Link to="/">
             肥家
           </Link>
-      
-          
         </div>
       </div>
     </div>

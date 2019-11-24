@@ -3,6 +3,7 @@ import React from 'react'
 import './style/Article.less'
 
 import { Button, Row, Col, Icon, Avatar } from 'antd'
+import { Link } from 'react-router-dom'
 
 const Article = (props) => {
   return (
@@ -23,21 +24,23 @@ const Article = (props) => {
                     <Col span={24} className="leftimg-right-item">
                       <Icon type="clock-circle" />
                       &nbsp;2019-11-23
-                </Col>
+                    </Col>
                     <Col span={24} className="leftimg-right-item">
                       <span className="pc-title">博客标题</span>
                     </Col>
                     <Col span={24} className="leftimg-right-item">
                       <Icon type="folder" />
                       &nbsp;技术
-                </Col>
+                    </Col>
                     <Col span={24} className="leftimg-right-item">
                       Nest.js是Node.js版本的Spring
-                </Col>
+                    </Col>
                     <Col span={24} className="leftimg-right-item-fat">
-                      <Button type="primary" shape="round" >
-                        Read
-                  </Button>
+                      <Link to="/detail">
+                        <Button type="primary" shape="round" >
+                          Read
+                        </Button>
+                      </Link>
                     </Col>
                   </Col>
 
@@ -61,9 +64,11 @@ const Article = (props) => {
                       Nest.js是Node.js版本的Spring
                     </Col>
                     <Col span={24} className="rightimg-right-item-fat">
-                      <Button type="primary" shape="round" >
-                        Read
-                      </Button>
+                      <Link to="/detail">
+                        <Button type="primary" shape="round" >
+                          Read
+                        </Button>
+                      </Link>
                     </Col>
                   </Col>
                   <Col span={14} className="rightimg-left-box">
@@ -81,10 +86,10 @@ const Article = (props) => {
               <div className="mobile-article-box">
                 <Row>
                   <Col span={24} className="mobile-top-box">
-                      <img
-                        draggable={false}
-                        src="https://c-ssl.duitang.com/uploads/item/201802/18/20180218080825_kfgtf.thumb.700_0.jpg"
-                        alt="博客预览图" />
+                    <img
+                      draggable={false}
+                      src="https://c-ssl.duitang.com/uploads/item/201802/18/20180218080825_kfgtf.thumb.700_0.jpg"
+                      alt="博客预览图" />
                   </Col>
                   <Col span={24} className="mobile-bottom-box">
                     <div className="mobile-bottom-left-box">
@@ -108,9 +113,12 @@ const Article = (props) => {
                       </Row>
                     </div>
                     <div className="mobile-bottom-right-box">
-                      <Button type="primary" shape="round" size="default">
-                        Read
+
+                      <Link to="/detail">
+                        <Button type="primary" shape="round" size="default">
+                          Read
                       </Button>
+                      </Link>
                     </div>
                   </Col>
                 </Row>

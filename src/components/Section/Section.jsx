@@ -11,7 +11,7 @@ const imgUrlList = [{
   url: "http://img.zcool.cn/community/011316578db59e0000018c1bda25ee.jpg",
   key: 'img-2'
 }, {
-  url: "http://i0.hdslb.com/bfs/article/1ea86910131747ebec9856c915b846cff89917fb.jpg",
+  url: "https://s2.ax1x.com/2019/11/24/MODMXF.jpg",
   key: 'img-3'
 }]
 

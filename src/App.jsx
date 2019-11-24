@@ -16,8 +16,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Router >
         <Nav defaultSelectedKeys={['react']} />
-        <Router>
           <Route path="/" exact component={Home} />
           <Route path="/list/:page" exact component={List} />
           <Route path="/detail" exact component={Detail} />

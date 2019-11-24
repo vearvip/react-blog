@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {Link} from 'react-router-dom'
 import './style/Nav.less'
 
 import QueueAnim from 'rc-queue-anim'
@@ -41,7 +42,7 @@ const navList = [{
   itemKey: 'life',
   iconType: 'instagram',
   buttonVal: '生活',
-  url: '/life'
+  url: '/list/life'
 }, {
   itemKey: 'say',
   iconType: 'compass',
@@ -72,14 +73,9 @@ const Nav = (props) => {
                   return (
                     'itemArr' in ele <= 0 ?
                       <Menu.Item key={ele.itemKey}>
-                        <a href={ele.url}>
+                        <Link to={ele.url}>
                           <Icon type={ele.iconType} />{ele.buttonVal}
-                        </a>
-                        {/* <Link href={ele.url}>
-                      <a>
-                        <Icon type={ele.iconType} />{ele.buttonVal}
-                      </a>
-                    </Link> */}
+                        </Link>
                       </Menu.Item> :
                       <SubMenu
                         title={
@@ -156,14 +152,9 @@ const Nav = (props) => {
                           return (
                             'itemArr' in ele <= 0 ?
                               <Menu.Item key={ele.itemKey}>
-                                <a href={ele.url}>
+                                <Link to={ele.url}>
                                   <Icon type={ele.iconType} />{ele.buttonVal}
-                                </a>
-                                {/* <Link href={ele.url}>
-                      <a>
-                        <Icon type={ele.iconType} />{ele.buttonVal}
-                      </a>
-                    </Link> */}
+                                </Link>
                               </Menu.Item> :
                               <SubMenu
                                 title={
