@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import './style/404.less'
 
 const F0F = props => {
+  window.scrollTo(0, 0)
   return (
     <div className="f0f">
       <div className="main-404-box">

@@ -20,23 +20,28 @@ const navList = [{
   itemArr: [{
     itemKey: 'react',
     buttonVal: 'react',
-    iconType: 'code-sandbox'
+    iconType: 'code-sandbox',
+    url: '/list/react'
   }, {
     itemKey: 'vue',
     buttonVal: 'vue',
-    iconType: 'code-sandbox'
+    iconType: 'code-sandbox',
+    url: '/list/vue'
   }, {
     itemKey: 'js',
     buttonVal: 'js',
-    iconType: 'code-sandbox'
+    iconType: 'code-sandbox',
+    url: '/list/js'
   }, {
     itemKey: 'css',
     buttonVal: 'css',
-    iconType: 'code-sandbox'
+    iconType: 'code-sandbox',
+    url: '/list/js'
   }, {
     itemKey: 'node',
     buttonVal: 'node',
-    iconType: 'code-sandbox'
+    iconType: 'code-sandbox',
+    url: '/list/node'
   }]
 }, {
   itemKey: 'life',
@@ -87,7 +92,7 @@ const Nav = (props) => {
                           {
                             ele.itemArr.map(item => {
                               return (
-                                <Menu.Item key={item.itemKey}><Icon type={item.iconType} />{item.buttonVal}</Menu.Item>
+                                <Menu.Item key={item.itemKey}><Link to={item.url}><Icon type={item.iconType} />{item.buttonVal}</Link></Menu.Item>
                               )
                             })
                           }
@@ -166,7 +171,7 @@ const Nav = (props) => {
                                   {
                                     ele.itemArr.map(item => {
                                       return (
-                                        <Menu.Item key={item.itemKey}><Icon type={item.iconType} />{item.buttonVal}</Menu.Item>
+                                        <Menu.Item key={item.itemKey}><Link to={item.url}><Icon type={item.iconType} />{item.buttonVal}</Link></Menu.Item>
                                       )
                                     })
                                   }
