@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './style/List.less'
 import { Row, Col, Icon, Pagination } from 'antd';
 
@@ -7,29 +6,28 @@ import Above from '../../components/Above/Above'
 const blogList = [{
   imgUrl: 'https://s2.ax1x.com/2019/11/24/MODMXF.jpg'
 },{
-  imgUrl: 'http://img.netbian.com/file/2019/0610/d51cb0d17545d9ff71cf2f8f42189f43.jpg'
+  imgUrl: 'https://s2.ax1x.com/2019/11/24/MXQ8lq.png'
 },{
-  imgUrl: 'http://img.netbian.com/file/2019/0610/d51cb0d17545d9ff71cf2f8f42189f43.jpg'
+  imgUrl: 'https://s2.ax1x.com/2019/11/24/MXMxOK.jpg'
 },{
-  imgUrl: 'http://img.netbian.com/file/2019/0610/d51cb0d17545d9ff71cf2f8f42189f43.jpg'
+  imgUrl: 'https://s2.ax1x.com/2019/11/24/MXQoct.jpg'
 },{
-  imgUrl: 'http://img.netbian.com/file/2019/0610/d51cb0d17545d9ff71cf2f8f42189f43.jpg'
+  imgUrl: 'https://s2.ax1x.com/2019/11/24/MXQXNQ.jpg'
 }]
 
 const List = props => {
   window.scrollTo(0, 0)
-  console.log(props)
   return (
     <div className="list">
       <Row>
         <Col xs={0} sm={0} md={24}>
           <div className="list-img-box">
-            <Above imgUrl={'https://s2.ax1x.com/2019/11/24/MOoFns.png'} />
+            <Above imgUrl={'https://s2.ax1x.com/2019/11/24/MXlH2R.png'} />
           </div>
         </Col>
         <Col xs={24} sm={24} md={0}>
           <div className="list-img-mobile-box">
-            <Above imgUrl={'https://s2.ax1x.com/2019/11/24/MOoFns.png'} />
+            <Above imgUrl={'https://s2.ax1x.com/2019/11/24/MXlH2R.png'} />
           </div>
         </Col>
       </Row>

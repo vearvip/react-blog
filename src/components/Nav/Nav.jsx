@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import './style/Nav.less'
 
 import QueueAnim from 'rc-queue-anim'
@@ -67,6 +67,10 @@ const navList = [{
 
 const Nav = (props) => {
   const [sideHidden, setSideHidden] = useState(true)
+  const routerPush = url => {
+    setSideHidden(true)
+    props.history.push(url)
+  }
   return (
     <nav>
       <Row className="row">
@@ -77,10 +81,8 @@ const Nav = (props) => {
                 navList.map(ele => {
                   return (
                     'itemArr' in ele <= 0 ?
-                      <Menu.Item key={ele.itemKey}>
-                        <Link to={ele.url}>
+                      <Menu.Item key={ele.itemKey} onClick={() => {routerPush(ele.url)}}>
                           <Icon type={ele.iconType} />{ele.buttonVal}
-                        </Link>
                       </Menu.Item> :
                       <SubMenu
                         title={
@@ -92,7 +94,9 @@ const Nav = (props) => {
                           {
                             ele.itemArr.map(item => {
                               return (
-                                <Menu.Item key={item.itemKey}><Link to={item.url}><Icon type={item.iconType} />{item.buttonVal}</Link></Menu.Item>
+                                <Menu.Item key={item.itemKey} onClick={() => {routerPush(item.url)}}>
+                                  <Icon type={item.iconType} />{item.buttonVal}
+                                </Menu.Item>
                               )
                             })
                           }
@@ -113,7 +117,6 @@ const Nav = (props) => {
           </div>
         </Col>
         <QueueAnim 
-        duration={700}
           type={['alpha', 'alpha']}
           ease={['easeOutQuart', 'easeInOutQuart']}>
           {
@@ -124,7 +127,7 @@ const Nav = (props) => {
                   <div className="mobile-menu-box" onClick={(e) => { e.stopPropagation() }}>
                     <div className="self-box">
                         <img 
-                        src="http://img.netbian.com/file/2017/0304/efdcf410af7fea5109b654ec9d94d191.jpg"
+                        src="https://s2.ax1x.com/2019/11/24/MXMxOK.jpg"
                         alt="隐藏nav背景图"
                         className="self-bg-img"/>
                       <div className="self-avator-box">
@@ -156,10 +159,8 @@ const Nav = (props) => {
                         navList.map(ele => {
                           return (
                             'itemArr' in ele <= 0 ?
-                              <Menu.Item key={ele.itemKey}>
-                                <Link to={ele.url}>
+                              <Menu.Item key={ele.itemKey} onClick={() => {routerPush(ele.url)}}>
                                   <Icon type={ele.iconType} />{ele.buttonVal}
-                                </Link>
                               </Menu.Item> :
                               <SubMenu
                                 title={
@@ -171,7 +172,9 @@ const Nav = (props) => {
                                   {
                                     ele.itemArr.map(item => {
                                       return (
-                                        <Menu.Item key={item.itemKey}><Link to={item.url}><Icon type={item.iconType} />{item.buttonVal}</Link></Menu.Item>
+                                        <Menu.Item key={item.itemKey} onClick={() => {routerPush(item.url)}}>
+                                          <Icon type={item.iconType} />{item.buttonVal}
+                                        </Menu.Item>
                                       )
                                     })
                                   }
@@ -195,4 +198,4 @@ const Nav = (props) => {
   )
 }
 
-export default Nav
+export default withRouter(Nav)

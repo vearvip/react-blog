@@ -11,6 +11,9 @@ const About = props => {
     <h1>关于我</h1>
     <h1>关于我</h1>
     <h1>关于我</h1>
+      <button onClick={() => {
+        props.history.push('/')
+      }}>走你</button>
     </div>
   )
 }
