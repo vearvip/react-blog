@@ -56,7 +56,8 @@ const List = props => {
                             </div>
                           </div>
                           <div className="list-item-introduce list-width-100f">
-                            PHP是世界上最好的语言</div>
+                            PHP是世界上最好的语言,PHP是世界上最好的语言,PHP是世界上最好的语言,PHP是世界上最好的语言,PHP是世界上最好的语言
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -78,7 +79,9 @@ const List = props => {
                           <Icon type="clock-circle" />
                           &ensp;2019-11-25
                         </div>
-                        <div className="list-item-content-introduce-mobile">文章内容，走你阿斯顿发送到发</div>
+                        <div className="list-item-content-introduce-mobile">
+                          文章内容，一尺深红胜曲尘，天生旧物不如新。何欢桃核终堪恨，里许元来别有人。井底点灯深烛伊，共郎长行莫围棋。玲珑骰子安红豆，入骨相思知不知。
+                        </div>
                       </div>
                     </div>
                   )
