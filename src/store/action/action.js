@@ -1,15 +1,9 @@
-import { GET_LIST, SET_NAV_SELECTED } from "../type/type";
+import { SET_NAV_SELECTED_ITEM_KEY } from "../type/type";
 
-export const getListAction = value => {
-  return {
-    type: GET_LIST,
-    value
-  }
-}
 // 设置被选中的那个item key
-export const setNavSelectedAction = value => {
+export const setNavSelectedItemKeyAction = value => {
   return {
-    type: SET_NAV_SELECTED,
+    type: SET_NAV_SELECTED_ITEM_KEY,
     value
   }
 }

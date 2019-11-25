@@ -1,20 +1,14 @@
-import { GET_LIST, SET_NAV_SELECTED } from '../type/type'
+import { SET_NAV_SELECTED_ITEM_KEY } from '../type/type'
 
 const defaultState = {
-  navKey: 'home'
+  navSelectedItemKey: 'home'
 }
 export default (state = defaultState, action) => {
-  if (action.type === GET_LIST) {
-    console.log(action)
+  if (action.type === SET_NAV_SELECTED_ITEM_KEY) {
+    console.log('收到来自组件的action', action)
     return {
       ...state,
-      nima: '你吗的'
-    }
-  } else if (action.type === SET_NAV_SELECTED) {
-    console.log(action)
-    return {
-      ...state,
-      navKey: action.value
+      navSelectedItemKey: action.value
     }
   }
   return state
