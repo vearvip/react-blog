@@ -107,7 +107,7 @@ const Nav = (props) => {
 
                     </div>
 
-                    <Menu mode="inline" defaultSelectedKeys={props.defaultSelectedKeys}>
+                    <Menu mode="inline" defaultSelectedKeys={['home']} selectedKeys={[props.navSelectedItemKey]}>
                       {
                         navList.map(ele => {
                           return (
