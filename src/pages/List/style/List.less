@@ -1,5 +1,6 @@
 .list {
   width: 100%;
+  // border: 1px solid red;
 
   .list-img-box {
     height: 500px;
@@ -26,7 +27,8 @@
       margin-right: 10px;
       // border: 1px dotted rgba(0, 0, 0, 0.1);
       border-radius: 10px;
-      padding: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
 
       // box-shadow: 0 1px 2px -1px rgba(0, 0, 0, .1);
       .list-item {
@@ -114,7 +116,7 @@
       }
       .list-item-mobile {
         width: 100%;
-        height: 10rem;
+        height: 9rem;
         border: 1px dotted rgba(0, 0, 0, 0.1);
         box-shadow: 0 0px 10px -2px rgba(0, 0, 0, .1);
         border-radius: 10px 10px 10px 10px;
@@ -135,9 +137,33 @@
           position: absolute;
           bottom: 0;
           width: 100%;
-          height: 7rem;
-          border-radius: 20px 20px 0 0;
-          background-color: rgba(255, 255, 255, 0.9);
+          height: 9rem;
+          border-radius: 10px 10px 10px 10px;
+          background-color: rgba(0, 0, 0, 0.2);
+          color: white;
+          padding: 15px;
+          .list-item-content-title-mobile {
+            color: white;
+            // border: 1px solid white;
+            line-height: 3rem;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: rgba(0, 0, 0, 0.5) 7px 7px 7px;
+          }
+          .list-item-content-date-mobile {
+            line-height: 1.5rem;
+            // border: 1px solid white;
+            font-size: 14px;
+            font-weight: bold;
+            text-shadow: rgba(0, 0, 0, 0.5) 7px 7px 7px;
+          }
+          .list-item-content-introduce-mobile {
+            line-height: 2.5rem;
+            // border: 1px solid white;
+            font-size: 16px;
+            font-weight: bold;
+            text-shadow: rgba(0, 0, 0, 0.5) 7px 7px 7px;
+          }
         }
       }
     }

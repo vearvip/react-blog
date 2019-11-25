@@ -5,13 +5,13 @@ import { Row, Col, Icon, Pagination } from 'antd';
 import Above from '../../components/Above/Above'
 const blogList = [{
   imgUrl: 'https://s2.ax1x.com/2019/11/24/MODMXF.jpg'
-},{
+}, {
   imgUrl: 'https://s2.ax1x.com/2019/11/24/MXQ8lq.png'
-},{
+}, {
   imgUrl: 'https://s2.ax1x.com/2019/11/24/MXMxOK.jpg'
-},{
+}, {
   imgUrl: 'https://s2.ax1x.com/2019/11/24/MXQoct.jpg'
-},{
+}, {
   imgUrl: 'https://s2.ax1x.com/2019/11/24/MXQXNQ.jpg'
 }]
 
@@ -69,9 +69,16 @@ const List = props => {
                 blogList.map((ele, index) => {
                   return (
                     <div key={index} className="list-item-mobile">
-                      <img src={ele.imgUrl} alt="博客预览背景图"/>
+                      <img src={ele.imgUrl} alt="博客预览背景图" />
                       <div className="list-item-content-mobile">
-                        
+                        <div className="list-item-content-title-mobile">
+                          文章标题
+                        </div>
+                        <div className="list-item-content-date-mobile">
+                          <Icon type="clock-circle" />
+                          &ensp;2019-11-25
+                        </div>
+                        <div className="list-item-content-introduce-mobile">文章内容，走你阿斯顿发送到发</div>
                       </div>
                     </div>
                   )
