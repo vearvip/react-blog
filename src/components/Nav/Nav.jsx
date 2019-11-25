@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import {withRouter} from 'react-router-dom'
 import './style/Nav.less'
-
+import store from '../../store/index'
+import { getListAction, setNavSelectedAction } from '../../store/action/action'
 import QueueAnim from 'rc-queue-anim'
 
 import { Row, Col,Avatar, Menu, Icon, Button } from 'antd'
@@ -67,21 +68,31 @@ const navList = [{
 
 const Nav = (props) => {
   const [sideHidden, setSideHidden] = useState(true)
-  const routerPush = url => {
+  console.log('store', store.getState())
+  const routerPush = (url, key) => {
+    store.dispatch(setNavSelectedAction(key))
     setSideHidden(true)
     props.history.push(url)
+  }
+  const getList = () => {
+    store.dispatch(getListAction({
+      name: '张三',
+      age: 12
+    }))
+    console.log('牛仔你zouni', store.getState())
   }
   return (
     <nav>
       <Row className="row">
         <Col xs={0} sm={0} md={24} className="col">
           <div className="pc-box">
+            <Button onClick={() => {getList()}}>走你</Button>
             <Menu mode="horizontal" defaultSelectedKeys={props.defaultSelectedKeys}>
               {
                 navList.map(ele => {
                   return (
                     'itemArr' in ele <= 0 ?
-                      <Menu.Item key={ele.itemKey} onClick={() => {routerPush(ele.url)}}>
+                      <Menu.Item key={ele.itemKey} onClick={() => {routerPush(ele.url, ele.itemKey)}}>
                           <Icon type={ele.iconType} />{ele.buttonVal}
                       </Menu.Item> :
                       <SubMenu
@@ -159,7 +170,7 @@ const Nav = (props) => {
                         navList.map(ele => {
                           return (
                             'itemArr' in ele <= 0 ?
-                              <Menu.Item key={ele.itemKey} onClick={() => {routerPush(ele.url)}}>
+                              <Menu.Item key={ele.itemKey} onClick={() => {routerPush(ele.url, ele.itemKey)}}>
                                   <Icon type={ele.iconType} />{ele.buttonVal}
                               </Menu.Item> :
                               <SubMenu
