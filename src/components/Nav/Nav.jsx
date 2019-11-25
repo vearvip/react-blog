@@ -47,7 +47,7 @@ const Nav = (props) => {
                           {
                             ele.itemArr.map(item => {
                               return (
-                                <Menu.Item key={item.itemKey} onClick={() => { routerPush(item.url) }}>
+                                <Menu.Item key={item.itemKey} onClick={() => { routerPush(item.url, item.itemKey) }}>
                                   <Icon type={item.iconType} />{item.buttonVal}
                                 </Menu.Item>
                               )
@@ -125,7 +125,7 @@ const Nav = (props) => {
                                   {
                                     ele.itemArr.map(item => {
                                       return (
-                                        <Menu.Item key={item.itemKey} onClick={() => { routerPush(item.url) }}>
+                                        <Menu.Item key={item.itemKey} onClick={() => { routerPush(item.url, item.itemKey) }}>
                                           <Icon type={item.iconType} />{item.buttonVal}
                                         </Menu.Item>
                                       )

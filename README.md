@@ -1,5 +1,12 @@
 # 【唯二主義】个人博客-前台部分
-## 技术栈：React.js、Ant Design
+## 技术栈
+- React全家桶
+  - React
+  - React-Router
+  - Rudex
+  - React-Rudex
+  - Rudex-Persist
+- Ant Design
 ### 安装依赖
 ```
 npm install
