@@ -3,6 +3,7 @@ import React from 'react';
 import './style/Detail.less'
 
 import ReactMarkdown from 'react-markdown'
+import { Row, Col,Affix } from 'antd';
 
 let markdown = '# P01:课程介绍和环境搭建\n' +
   '[ **M** ] arkdown + E [ **ditor** ] = **Mditor**  \n' +
@@ -44,13 +45,24 @@ const Detail = props => {
     <div className="detail">
       <div className="detail-img-box"></div>
       <div className="detail-main">
+        <div className="detail-content">
+
         <div className="detail-markdown-box">
           <ReactMarkdown
             source={markdown}
             escapeHtml={false}
           />
         </div>
-
+        {/* <Row type="flex" justify="space-between"> */}
+        <Row >
+          <Col xs={0} sm={0} md={24}>
+            <Affix offsetTop={40}>
+            <div className="detail-catalogue-box">
+            </div>
+            </Affix>
+          </Col>
+        </Row>
+        </div>
       </div>
     </div>
 
