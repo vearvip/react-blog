@@ -18,11 +18,17 @@ const Nav = (props) => {
     setSideHidden(true)
     props.history.push(url)
   }
+  // const printSomething = () => {
+  //   console.log(props.navSelectedItemKey)
+  //   props.setNavSelectedItemKeyAction('你妈的')
+  //   console.log(props.navSelectedItemKey)
+  // }
   return (
     <nav>
       <Row className="row">
         <Col xs={0} sm={0} md={24} className="col">
           <div className="pc-box">
+          {/* <Button onClick={printSomething}>走你</Button> */}
             <Menu mode="horizontal" defaultSelectedKeys={['home']} selectedKeys={[props.navSelectedItemKey]}>
               {
                 navList.map(ele => {
