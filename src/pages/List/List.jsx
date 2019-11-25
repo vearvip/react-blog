@@ -19,18 +19,7 @@ const List = props => {
   window.scrollTo(0, 0)
   return (
     <div className="list">
-      <Row>
-        <Col xs={0} sm={0} md={24}>
-          <div className="list-img-box">
-            <Above imgUrl={'https://s2.ax1x.com/2019/11/24/MXlH2R.png'} />
-          </div>
-        </Col>
-        <Col xs={24} sm={24} md={0}>
-          <div className="list-img-mobile-box">
-            <Above imgUrl={'https://s2.ax1x.com/2019/11/24/MXlH2R.png'} />
-          </div>
-        </Col>
-      </Row>
+      <Above imgUrl={'https://s2.ax1x.com/2019/11/24/MXlH2R.png'} />
 
       <div className="list-main">
         <div className="list-main-content">
