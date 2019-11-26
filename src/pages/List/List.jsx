@@ -2,6 +2,8 @@ import React from 'react';
 import './style/List.less'
 import { Row, Col, Icon, Pagination } from 'antd';
 
+import {connect} from 'react-redux'
+import {setNavSelectedItemKeyAction} from '../../store/action/action'
 import Above from '../../components/Above/Above'
 const blogList = [{
   imgUrl: 'https://s2.ax1x.com/2019/11/24/MODMXF.jpg'
@@ -17,6 +19,7 @@ const blogList = [{
 
 const List = props => {
   window.scrollTo(0, 0)
+  props.navSelectedItemKey !== 'list' && props.setNavSelectedItemKeyAction('list')
   return (
     <div className="list">
       <Above imgUrl={'https://s2.ax1x.com/2019/11/24/MXlH2R.png'} />
@@ -88,4 +91,10 @@ const List = props => {
   )
 }
 
-export default List
+export default connect(state => {
+  return {
+    navSelectedItemKey: state.navSelectedItemKey
+  }
+}, {
+  setNavSelectedItemKeyAction
+})(List)   

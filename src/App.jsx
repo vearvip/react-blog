@@ -22,7 +22,7 @@ class App extends Component {
         <Router >
         <Nav />
           <Route path="/" exact component={Home} />
-          <Route path="/list/:page" exact component={List} />
+          <Route path="/list" exact component={List} />
           <Route path="/detail" exact component={Detail} />
           <Route path="/say" exact component={Say} />
           <Route path="/about" exact component={About} />

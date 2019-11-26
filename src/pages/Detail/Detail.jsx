@@ -3,11 +3,13 @@ import React from 'react';
 import './style/Detail.less'
 
 import ReactMarkdown from 'react-markdown'
-import { Row, Col,Affix } from 'antd';
+import { Row, Col, Affix } from 'antd';
 
 import MarkNav from 'markdown-navbar';
 import 'markdown-navbar/dist/navbar.css';
 
+import {connect} from 'react-redux'
+import {setNavSelectedItemKeyAction} from '../../store/action/action'
 import Above from '../../components/Above/Above'
 
 let markdown = '## 课程介绍和环境搭建课程介绍和环境搭建课程介绍和环境搭建\n' +
@@ -79,32 +81,33 @@ let markdown = '## 课程介绍和环境搭建课程介绍和环境搭建课程�
 
 const Detail = props => {
   window.scrollTo(0, 0)
+  // props.navSelectedItemKey !== 'detail' && props.setNavSelectedItemKeyAction('detail')
   return (
     <div className="detail">
-    <Above imgUrl={'https://s2.ax1x.com/2019/11/24/MXQoct.jpg'} />
+      <Above imgUrl={'https://s2.ax1x.com/2019/11/24/MXQoct.jpg'} />
       <div className="detail-main">
         <div className="detail-content">
 
-        <div className="detail-markdown-box">
-          <ReactMarkdown
-            source={markdown}
-            escapeHtml={false}
-          />
-        </div>
-        {/* <Row type="flex" justify="space-between"> */}
-        <Row >
-          <Col xs={0} sm={0} md={24}>
-            <Affix offsetTop={40}>
-            <div className="detail-catalogue-box">
-            <MarkNav
+          <div className="detail-markdown-box">
+            <ReactMarkdown
               source={markdown}
-              headingTopOffset={0}
-              ordered={false}
+              escapeHtml={false}
             />
-            </div>
-            </Affix>
-          </Col>
-        </Row>
+          </div>
+          {/* <Row type="flex" justify="space-between"> */}
+          <Row >
+            <Col xs={0} sm={0} md={24}>
+              <Affix offsetTop={40}>
+                <div className="detail-catalogue-box">
+                  <MarkNav
+                    source={markdown}
+                    headingTopOffset={0}
+                    ordered={false}
+                  />
+                </div>
+              </Affix>
+            </Col>
+          </Row>
         </div>
       </div>
     </div>
@@ -112,4 +115,10 @@ const Detail = props => {
   )
 }
 
-export default Detail
+export default connect(state => {
+  return {
+    navSelectedItemKey: state.navSelectedItemKey
+  }
+}, {
+  setNavSelectedItemKeyAction
+})(Detail)    

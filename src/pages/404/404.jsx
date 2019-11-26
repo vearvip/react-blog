@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
+import {connect} from 'react-redux'
+import {setNavSelectedItemKeyAction} from '../../store/action/action'
 import './style/404.less'
 
 const F0F = props => {
   window.scrollTo(0, 0)
+  props.navSelectedItemKey !== 'f0f' && props.setNavSelectedItemKeyAction('f0f')
   return (
     <div className="f0f">
       <div className="main-404-box">
@@ -23,4 +26,10 @@ const F0F = props => {
   )
 }
 
-export default F0F
+export default connect(state => {
+  return {
+    navSelectedItemKey: state.navSelectedItemKey
+  }
+}, {
+  setNavSelectedItemKeyAction
+})(F0F) 

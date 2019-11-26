@@ -8,13 +8,13 @@ import QueueAnim from 'rc-queue-anim'
 import { navList } from './script/navConfig'
 
 import { Row, Col, Avatar, Menu, Icon, Button } from 'antd'
-const { SubMenu } = Menu;
+// const { SubMenu } = Menu;
 
 const Nav = (props) => {
   const [sideHidden, setSideHidden] = useState(true)
   // console.log('store', store.getState())
   const routerPush = (url, key) => {
-    console.log('props.setNavSelectedItemKeyAction', props.setNavSelectedItemKeyAction)
+    // console.log('props.setNavSelectedItemKeyAction', props.setNavSelectedItemKeyAction)
     props.setNavSelectedItemKeyAction(key)
     setSideHidden(true)
     props.history.push(url)
@@ -34,28 +34,9 @@ const Nav = (props) => {
               {
                 navList.map(ele => {
                   return (
-                    'itemArr' in ele <= 0 ?
                       <Menu.Item key={ele.itemKey} onClick={() => { routerPush(ele.url, ele.itemKey) }}>
                         <Icon type={ele.iconType} />{ele.buttonVal}
-                      </Menu.Item> :
-                      <SubMenu
-                        title={
-                          <span ><Icon type={ele.iconType} />{ele.buttonVal}</span>
-                        }
-                        key={ele.itemKey}
-                      >
-                        <Menu.ItemGroup title="技术">
-                          {
-                            ele.itemArr.map(item => {
-                              return (
-                                <Menu.Item key={item.itemKey} onClick={() => { routerPush(item.url, item.itemKey) }}>
-                                  <Icon type={item.iconType} />{item.buttonVal}
-                                </Menu.Item>
-                              )
-                            })
-                          }
-                        </Menu.ItemGroup>
-                      </SubMenu>
+                      </Menu.Item>
                   )
                 })
               }
@@ -112,28 +93,9 @@ const Nav = (props) => {
                       {
                         navList.map(ele => {
                           return (
-                            'itemArr' in ele <= 0 ?
                               <Menu.Item key={ele.itemKey} onClick={() => { routerPush(ele.url, ele.itemKey) }}>
                                 <Icon type={ele.iconType} />{ele.buttonVal}
-                              </Menu.Item> :
-                              <SubMenu
-                                title={
-                                  <span ><Icon type={ele.iconType} />{ele.buttonVal}</span>
-                                }
-                                key={ele.itemKey}
-                              >
-                                <Menu.ItemGroup title="技术">
-                                  {
-                                    ele.itemArr.map(item => {
-                                      return (
-                                        <Menu.Item key={item.itemKey} onClick={() => { routerPush(item.url, item.itemKey) }}>
-                                          <Icon type={item.iconType} />{item.buttonVal}
-                                        </Menu.Item>
-                                      )
-                                    })
-                                  }
-                                </Menu.ItemGroup>
-                              </SubMenu>
+                              </Menu.Item>
                           )
                         })
                       }
@@ -153,7 +115,6 @@ const Nav = (props) => {
 }
 
 export default withRouter(connect(state => {
-  // console.log('不多比比', state)
   return {
     navSelectedItemKey: state.navSelectedItemKey
   }

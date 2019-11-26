@@ -8,7 +8,7 @@ const Above = props => {
     <div className="above">
       <Row>
         <Col xs={0} sm={0} md={24} className="above-box">
-          <img src={props.imgUrl} alt="网页前面的图片" />
+          <img draggable={false} src={props.imgUrl} alt="网页前面的图片" />
           <div className="above-wave-row">
             <div className="above-wave">
               <div className="above-wave-item1"></div>
@@ -18,7 +18,7 @@ const Above = props => {
           </div>
         </Col>
         <Col xs={24} sm={24} md={0} className="mobile-above-box">
-          <img src={props.imgUrl} alt="网页前面的图片" />
+          <img draggable={false} src={props.imgUrl} alt="网页前面的图片" />
           <div className="mobile-above-wave-row">
             <div className="mobile-above-wave">
               <div className="mobile-above-wave-item1"></div>
