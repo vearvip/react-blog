@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
 
 import './App.less';
 
@@ -20,14 +20,16 @@ class App extends Component {
     return (
       <div className="App">
         <Router >
-        <Nav />
+          <Nav />
+          <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/list" exact component={List} />
           <Route path="/detail" exact component={Detail} />
           <Route path="/say" exact component={Say} />
           <Route path="/about" exact component={About} />
           <Route path="/friend" exact component={Friend} />
-          <Route path="/404" component={F0F} />
+          <Route component={F0F} />
+          </Switch>
         </Router>
         <Footer />
       </div>

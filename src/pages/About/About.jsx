@@ -12,20 +12,14 @@ const About = props => {
   return (
     <div className="about">
     <Above imgUrl={'https://s2.ax1x.com/2019/11/26/Mzb75Q.jpg'} />
-    <h1>关于我</h1>
-    <h1>关于我</h1>
-    <h1>关于我</h1>
-    <h1>关于我</h1>
-    <h1>关于我</h1>
-    <h1>关于我</h1>
-    <h1>关于我</h1>
-    <h1>关于我</h1>
     <span role="img" aria-label="施工中" style={{
       color: 'red'
     }}>施工中🚧</span>
+    <br/>
       <button onClick={() => {
         props.history.push('/')
-      }}>走你</button>
+      }}>首页走你</button>
+      <p>联系方式：vear.vip@qq.com</p>
     </div>
   )
 }
