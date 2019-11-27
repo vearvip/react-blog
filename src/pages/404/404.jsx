@@ -7,7 +7,11 @@ import './style/404.less'
 
 const F0F = props => {
   window.scrollTo(0, 0)
-  props.navSelectedItemKey !== 'f0f' && props.setNavSelectedItemKeyAction('f0f')
+  const {
+    navSelectedItemKey,
+    setNavSelectedItemKeyAction
+  } = props
+  navSelectedItemKey !== 'f0f' && setNavSelectedItemKeyAction('f0f')
   return (
     <div className="f0f">
       <div className="main-404-box">

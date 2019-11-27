@@ -8,7 +8,11 @@ import {setNavSelectedItemKeyAction} from '../../store/action/action'
 
 const Home = props => {
   window.scrollTo(0, 0)
-  props.navSelectedItemKey !== 'home' && props.setNavSelectedItemKeyAction('home')
+  const {
+    navSelectedItemKey,
+    setNavSelectedItemKeyAction
+  } = props
+  navSelectedItemKey !== 'home' && setNavSelectedItemKeyAction('home')
   return (
     <>
       <Section/>

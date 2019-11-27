@@ -17,9 +17,13 @@ const sayList = [{
 }]
 const Say = props => {
   window.scrollTo(0, 0)
-  props.navSelectedItemKey !== 'say' && props.setNavSelectedItemKeyAction('say')
+  const {
+    navSelectedItemKey,
+    setNavSelectedItemKeyAction
+  } = props
+  navSelectedItemKey !== 'say' && setNavSelectedItemKeyAction('say')
   // const retTest = async () => {
-  //   const aaaa = await props.getTestListAction()
+  //   const aaaa = await WgetTestListAction()
   //   console.log('aaaa', aaaa)
   // }
   return (

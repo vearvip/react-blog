@@ -15,7 +15,7 @@ const Nav = (props) => {
   // console.log('store', store.getState())
   const routerPush = (url, key) => {
     // console.log('props.setNavSelectedItemKeyAction', props.setNavSelectedItemKeyAction)
-    props.setNavSelectedItemKeyAction(key)
+    // props.setNavSelectedItemKeyAction(key)
     setSideHidden(true)
     props.history.push(url)
   }
