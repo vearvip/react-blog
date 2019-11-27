@@ -1,10 +1,10 @@
 import React from 'react';
 import Above from '../../components/Above/Above'
 import './style/Say.less'
-import { Avatar } from 'antd';
+import { Avatar, Button } from 'antd';
 
 import {connect} from 'react-redux'
-import {setNavSelectedItemKeyAction} from '../../store/action/action'
+import {setNavSelectedItemKeyAction,getTestListAction,xhrErrorNotify} from '../../store/action/action'
 
 const sayList = [{
   content: '蚂蚁的企业级产品是一个庞大且复杂的体系。蚂蚁的企业级产品是一个庞大且复杂的体系。蚂蚁的企业级产品是一个庞大且复杂的体系。蚂蚁的企业级产品是一个庞大且复杂的体系。蚂蚁的企业级产品是一个庞大且复杂的体系。蚂蚁的企业级产品是一个庞大且复杂的体系。蚂蚁的企业级产品是一个庞大且复杂的体系。蚂蚁的企业级产品是一个庞大且复杂的体系。'
@@ -18,9 +18,16 @@ const sayList = [{
 const Say = props => {
   window.scrollTo(0, 0)
   props.navSelectedItemKey !== 'say' && props.setNavSelectedItemKeyAction('say')
+  console.log('你妈的props', props)
+  const retTest = async () => {
+    const aaaa = await props.getTestListAction()
+    console.log('aaaa', aaaa)
+    // props.xhrErrorNotify()
+  }
   return (
     <div className="say">
       <Above imgUrl={'https://s2.ax1x.com/2019/11/26/Mzb75Q.jpg'} />
+      <Button onClick={retTest}>retTest</Button>
       <div className="say-main">
         {
           sayList.map((ele, index) => {
@@ -46,5 +53,5 @@ export default connect(state => {
     navSelectedItemKey: state.navSelectedItemKey
   }
 }, {
-  setNavSelectedItemKeyAction
+  setNavSelectedItemKeyAction,getTestListAction,xhrErrorNotify
 })(Say)  

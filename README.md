@@ -5,8 +5,10 @@
   - React-Router
   - Rudex
   - React-Rudex
+  - Rudex-Thunk
   - Rudex-Persist
 - Ant Design
+- Axios
 ### 安装依赖
 ```
 npm install
