@@ -9,6 +9,8 @@
   - Rudex-Persist
 - Ant Design
 - Axios
+## 预览地址
+[http://vear.vip/](http://vear.vip/)
 ### 安装依赖
 ```
 npm install
