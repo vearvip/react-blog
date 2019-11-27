@@ -1,7 +1,7 @@
 import React from 'react';
 import Above from '../../components/Above/Above'
 import './style/Say.less'
-import { Avatar, Button } from 'antd';
+import { Avatar } from 'antd';
 
 import {connect} from 'react-redux'
 import {setNavSelectedItemKeyAction,getTestListAction,xhrErrorNotify} from '../../store/action/action'
@@ -18,16 +18,14 @@ const sayList = [{
 const Say = props => {
   window.scrollTo(0, 0)
   props.navSelectedItemKey !== 'say' && props.setNavSelectedItemKeyAction('say')
-  console.log('你妈的props', props)
-  const retTest = async () => {
-    const aaaa = await props.getTestListAction()
-    console.log('aaaa', aaaa)
-    // props.xhrErrorNotify()
-  }
+  // const retTest = async () => {
+  //   const aaaa = await props.getTestListAction()
+  //   console.log('aaaa', aaaa)
+  // }
   return (
     <div className="say">
       <Above imgUrl={'https://s2.ax1x.com/2019/11/26/Mzb75Q.jpg'} />
-      <Button onClick={retTest}>retTest</Button>
+      {/* <Button onClick={retTest}>retTest</Button> */}
       <div className="say-main">
         {
           sayList.map((ele, index) => {

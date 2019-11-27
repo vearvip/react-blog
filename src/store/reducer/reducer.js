@@ -10,7 +10,13 @@ const defaultState = {
   navSelectedItemKey: 'home'
 }
 export default (state = defaultState, action) => {
-  if (action.type === SET_NAV_SELECTED_ITEM_KEY) {
+  if (action.type === XHR_ERROR_NOTIFY) { // 请求失败或者thunk中间件函数出现问题时给个提示
+    message.error(action.value);
+    return state
+  } else if (action.type === XHR_WARNING_NOTIFY) { // 后端返回请求有问题时给个提示
+    message.warning(action.value);
+    return state
+  } else if (action.type === SET_NAV_SELECTED_ITEM_KEY) {
     // console.log('收到来自组件的action', action)
     return {
       ...state,
@@ -22,14 +28,6 @@ export default (state = defaultState, action) => {
       ...state,
       testList: action.value
     }
-  } else if (action.type === XHR_ERROR_NOTIFY) {
-    // console.log('你妈的你妈的')
-    message.error(action.value);
-    return state
-  } else if (action.type === XHR_WARNING_NOTIFY) {
-    // console.log('你妈的你妈的')
-    message.warning(action.value);
-    return state
   }
   return state
 }
