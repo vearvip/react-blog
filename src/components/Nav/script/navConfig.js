@@ -15,7 +15,7 @@ export const navList = [{
   url: '/say'
 }, {
   itemKey: 'about',
-  iconType: 'message',
+  iconType: 'smile',
   buttonVal: '关于我',
   url: '/about'
 }, {
@@ -23,4 +23,9 @@ export const navList = [{
   iconType: 'heart',
   buttonVal: '友人帐',
   url: '/friend'
+}, {
+  itemKey: 'leave-msg',
+  iconType: 'message',
+  buttonVal: '留言',
+  url: '/leave-msg'
 }]

@@ -40,5 +40,5 @@ npm run build
 在这里十分感谢各位对开源的贡献
 
 ## LICENSE
-本项目遵循MIT开源许可，可自由进行下载修改
+本项目遵循[MIT](https://github.com/vearvip/react-blog/blob/master/LICENSE)开源许可，可自由进行下载修改
 

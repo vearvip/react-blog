@@ -14,6 +14,7 @@ import F0F from './pages/404/404'
 import About from './pages/About/About'
 import Friend from './pages/Friend/Friend'
 import Say from './pages/Say/Say'
+import LeaveMsg from './pages/LeaveMsg/LeaveMsg'
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
           <Route path="/say" exact component={Say} />
           <Route path="/about" exact component={About} />
           <Route path="/friend" exact component={Friend} />
+          <Route path="/leave-msg" exact component={LeaveMsg} />
           <Route component={F0F} />
           </Switch>
         </Router>
