@@ -26,6 +26,7 @@
   "homepage": "https://github.com/vearvip/react-blog#readme",
   "dependencies": {
     "@zeit/next-less": "^1.0.1",
+    "antd": "^3.26.9",
     "less": "^3.10.3",
     "next": "^9.2.1",
     "react": "^16.12.0",
