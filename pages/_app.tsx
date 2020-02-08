@@ -1,4 +1,4 @@
 import 'antd/dist/antd.less'
-import Index from './index'
+import App from 'next/app'
 
-export default Index
+export default App
