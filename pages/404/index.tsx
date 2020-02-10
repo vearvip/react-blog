@@ -3,7 +3,7 @@ import React from 'react';
 
 // import {connect} from 'react-redux'
 // import {setNavSelectedItemKeyAction} from '../../store/action/action'
-import './index.less'
+import './style/index.less'
 
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'

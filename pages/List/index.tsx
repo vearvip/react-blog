@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.less'
+import './style/index.less'
 import { Row, Col, Icon, Pagination } from 'antd';
 import Above from '../../components/Above'
 import Nav from '../../components/Nav'

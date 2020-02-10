@@ -1,12 +1,15 @@
 import React from 'react';
 
-import './style/Detail.less'
+import './style/index.less'
 
 import { Row, Col, Affix } from 'antd';
 
 import ReactMarkdown from 'react-markdown'
-import MarkNav from 'markdown-navbar';
-import 'markdown-navbar/dist/navbar.css';
+import MarkdownNavbar from 'markdown-navbar';
+// import 'markdown-navbar/dist/navbar.css';
+
+import Nav from '../../components/Nav'
+import Footer from '../../components/Footer'
 
 // import {connect} from 'react-redux'
 // import {setNavSelectedItemKeyAction} from '../../store/action/action'
@@ -80,37 +83,41 @@ let markdown = '## 课程介绍和环境搭建课程介绍和环境搭建课程�
   '``` var a=11; ```'
 
 const Detail = (props: any) => {
-  window.scrollTo(0, 0)
+  // window.scrollTo(0, 0)
   // props.navSelectedItemKey !== 'detail' && props.setNavSelectedItemKeyAction('detail')
   return (
-    <div className="detail">
-      <Above imgUrl={'https://s2.ax1x.com/2019/11/24/MXQoct.jpg'} />
-      <div className="detail-main">
-        <div className="detail-content">
+    <>
+      <Nav />
+      <div className="detail">
+        <Above imgUrl={'https://s2.ax1x.com/2019/11/24/MXQoct.jpg'} />
+        <div className="detail-main">
+          <div className="detail-content">
 
-          <div className="detail-markdown-box">
-            <ReactMarkdown
-              source={markdown}
-              escapeHtml={false}
-            />
+            <div className="detail-markdown-box">
+              <ReactMarkdown
+                source={markdown}
+                escapeHtml={false}
+              />
+            </div>
+            {/* <Row type="flex" justify="space-between"> */}
+            <Row >
+              <Col xs={0} sm={0} md={24}>
+                <Affix offsetTop={40}>
+                  <div className="detail-catalogue-box">
+                    <MarkdownNavbar
+                      source={markdown}
+                      headingTopOffset={0}
+                      ordered={false}
+                    />
+                  </div>
+                </Affix>
+              </Col>
+            </Row>
           </div>
-          {/* <Row type="flex" justify="space-between"> */}
-          <Row >
-            <Col xs={0} sm={0} md={24}>
-              <Affix offsetTop={40}>
-                <div className="detail-catalogue-box">
-                  <MarkNav
-                    source={markdown}
-                    headingTopOffset={0}
-                    ordered={false}
-                  />
-                </div>
-              </Affix>
-            </Col>
-          </Row>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
 
   )
 }

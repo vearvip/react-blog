@@ -8,7 +8,7 @@ import Footer from '../../components/Footer'
 // import { setNavSelectedItemKeyAction } from '../../store/action/action'
 import { Avatar } from 'antd';
 
-import './index.less'
+import './style/index.less'
 
 const aboutMeList = [{
   title: '关于我',

@@ -7,7 +7,7 @@ import Footer from '../../components/Footer'
 // import { connect } from 'react-redux'
 // import { setNavSelectedItemKeyAction } from '../../store/action/action'
 
-import './index.less'
+import './style/index.less'
 
 const LeaveMsg = (props: any) => {
   // window.scrollTo(0, 0)
