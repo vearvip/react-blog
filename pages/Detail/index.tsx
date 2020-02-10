@@ -6,7 +6,7 @@ import { Row, Col, Affix } from 'antd';
 
 import ReactMarkdown from 'react-markdown'
 import MarkdownNavbar from 'markdown-navbar';
-// import 'markdown-navbar/dist/navbar.css';
+import './style/markdown-navbar.less';
 
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'

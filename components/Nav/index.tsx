@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-// import { withRouter } from 'react-router-dom'
 import './style/index.less'
 // import { connect } from 'react-redux'
 // import { setNavSelectedItemKeyAction } from '../../store/action/action'
 // import QueueAnim from 'rc-queue-anim'
 // nav的按钮配置
 // import { navList } from './script/navConfig'
+import Link from 'next/link'
 
 export const navList = [{
   itemKey: 'home',
@@ -33,10 +33,10 @@ export const navList = [{
   buttonVal: '友人帐',
   url: '/friend'
 }, {
-  itemKey: 'leave-msg',
+  itemKey: 'message',
   iconType: 'message',
   buttonVal: '留言',
-  url: '/leave-msg'
+  url: '/message'
 }]
 
 import { Row, Col, Avatar, Menu, Icon, Button } from 'antd'
@@ -49,7 +49,7 @@ const Nav = (props: any) => {
     // console.log('props.setNavSelectedItemKeyAction', props.setNavSelectedItemKeyAction)
     // props.setNavSelectedItemKeyAction(key)
     setSideHidden(true)
-    props.history.push(url)
+    // props.history.push(url)
   }
   // const printSomething = () => {
   //   console.log(props.navSelectedItemKey)
@@ -61,14 +61,19 @@ const Nav = (props: any) => {
       <Row className="row">
         <Col xs={0} sm={0} md={24} className="col">
           <div className="pc-box">
-          {/* <Button onClick={printSomething}>走你</Button> */}
+            {/* <Button onClick={printSomething}>走你</Button> */}
             <Menu mode="horizontal" defaultSelectedKeys={['home']} selectedKeys={[props.navSelectedItemKey]}>
               {
                 navList.map(ele => {
                   return (
-                      <Menu.Item key={ele.itemKey} onClick={() => { routerPush(ele.url, ele.itemKey) }}>
-                        <Icon type={ele.iconType} />{ele.buttonVal}
-                      </Menu.Item>
+                    <Menu.Item key={ele.itemKey} onClick={() => { routerPush(ele.url, ele.itemKey) }}>
+
+                      <Link href={ele.url}>
+                        <a>
+                          <Icon type={ele.iconType} />{ele.buttonVal}
+                        </a>
+                      </Link>
+                    </Menu.Item>
                   )
                 })
               }
@@ -86,59 +91,63 @@ const Nav = (props: any) => {
         {/* <QueueAnim
           type={['alpha', 'alpha']}
           ease={['easeOutQuart', 'easeInOutQuart']}> */}
-          {
-            sideHidden ?
-              null :
-              [<Col xs={24} sm={24} md={24} className="col" key='side-box'>
-                <div className="mobile-side-box" onClick={() => { setSideHidden(true) }}>
-                  <div className="mobile-menu-box" onClick={(e) => { e.stopPropagation() }}>
-                    <div className="self-box">
-                      <img
-                        src="https://s2.ax1x.com/2019/11/24/MXMxOK.jpg"
-                        alt="隐藏nav背景图"
-                        className="self-bg-img" />
-                      <div className="self-avator-box">
-                        <Avatar size={80} icon="user" src="http://5b0988e595225.cdn.sohucs.com/images/20171231/fb5bab11952b4b7d920b8798c4dc2ec2.jpeg" className="avator-circle" />
-                      </div>
-                      <div className="self-contact-box">
+        {
+          sideHidden ?
+            null :
+            [<Col xs={24} sm={24} md={24} className="col" key='side-box'>
+              <div className="mobile-side-box" onClick={() => { setSideHidden(true) }}>
+                <div className="mobile-menu-box" onClick={(e) => { e.stopPropagation() }}>
+                  <div className="self-box">
+                    <img
+                      src="https://s2.ax1x.com/2019/11/24/MXMxOK.jpg"
+                      alt="隐藏nav背景图"
+                      className="self-bg-img" />
+                    <div className="self-avator-box">
+                      <Avatar size={80} icon="user" src="http://5b0988e595225.cdn.sohucs.com/images/20171231/fb5bab11952b4b7d920b8798c4dc2ec2.jpeg" className="avator-circle" />
+                    </div>
+                    <div className="self-contact-box">
 
-                        <Row >
-                          <Col span={24}>
-                            <div className="section-flex-center">
-                              <p>你以为我刀枪不入，我以为你百毒不侵</p>
-                            </div>
-                          </Col>
-                          <Col span={24}>
-                            <div className="section-flex-center">
-                              <Icon type="wechat" className="icon-style icon-green" />
-                              <Icon type="weibo" className="icon-style icon-red" />
-                              <Icon type="qq" className="icon-style icon-blue" />
-                              <Icon type="github" className="icon-style icon-grey" />
-                            </div>
-                          </Col>
-                        </Row>
-                      </div>
-
+                      <Row >
+                        <Col span={24}>
+                          <div className="section-flex-center">
+                            <p>你以为我刀枪不入，我以为你百毒不侵</p>
+                          </div>
+                        </Col>
+                        <Col span={24}>
+                          <div className="section-flex-center">
+                            <Icon type="wechat" className="icon-style icon-green" />
+                            <Icon type="weibo" className="icon-style icon-red" />
+                            <Icon type="qq" className="icon-style icon-blue" />
+                            <Icon type="github" className="icon-style icon-grey" />
+                          </div>
+                        </Col>
+                      </Row>
                     </div>
 
-                    <Menu mode="inline" defaultSelectedKeys={['home']} selectedKeys={[props.navSelectedItemKey]}>
-                      {
-                        navList.map(ele => {
-                          return (
-                              <Menu.Item key={ele.itemKey} onClick={() => { routerPush(ele.url, ele.itemKey) }}>
+                  </div>
+
+                  <Menu mode="inline" defaultSelectedKeys={['home']} selectedKeys={[props.navSelectedItemKey]}>
+                    {
+                      navList.map(ele => {
+                        return (
+                          <Menu.Item key={ele.itemKey} onClick={() => { routerPush(ele.url, ele.itemKey) }}>
+                            <Link href={ele.url}>
+                              <a>
                                 <Icon type={ele.iconType} />{ele.buttonVal}
-                              </Menu.Item>
-                          )
-                        })
-                      }
-                    </Menu>
-                    <div className="leave-button-box">
-                      <Button shape="round" icon="import" onClick={() => { setSideHidden(true) }} />
-                    </div>
+                              </a>
+                            </Link>
+                          </Menu.Item>
+                        )
+                      })
+                    }
+                  </Menu>
+                  <div className="leave-button-box">
+                    <Button shape="round" icon="import" onClick={() => { setSideHidden(true) }} />
                   </div>
                 </div>
-              </Col>]
-          }
+              </div>
+            </Col>]
+        }
         {/* </QueueAnim> */}
 
       </Row>

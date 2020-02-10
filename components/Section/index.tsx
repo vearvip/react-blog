@@ -6,13 +6,13 @@ import { Head, NextScript } from 'next/document'
 import { Row, Col, Carousel, Button, Avatar, Icon } from 'antd'
 
 const imgUrlList = [{
-  url: "http://img.zcool.cn/community/019929578109990000012e7e9f003c.jpg",
-  key: 'img-1'
-}, {
-  url: "http://img.zcool.cn/community/011316578db59e0000018c1bda25ee.jpg",
-  key: 'img-2'
-}, {
-  url: "https://s2.ax1x.com/2019/11/24/MODMXF.jpg",
+//   url: "http://img.zcool.cn/community/019929578109990000012e7e9f003c.jpg",
+//   key: 'img-1'
+// }, {
+//   url: "http://img.zcool.cn/community/011316578db59e0000018c1bda25ee.jpg",
+//   key: 'img-2'
+// }, {
+  url: "https://s2.ax1x.com/2020/02/10/15gLKs.png",
   key: 'img-3'
 }]
 
@@ -50,7 +50,7 @@ const Section = (props: any) => {
           <Col xs={0} sm={0} md={24} >
             <div className="me">
               <div className="avator-box">
-                <Avatar size={120} icon="user" src="http://5b0988e595225.cdn.sohucs.com/images/20171231/fb5bab11952b4b7d920b8798c4dc2ec2.jpeg" className="avator-circle" />
+                <Avatar size={120} icon="user" src="https://s2.ax1x.com/2020/02/10/15fniV.jpg" className="avator-circle" />
               </div>
               <div className="contact-box">
 

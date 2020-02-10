@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 // import {connect} from 'react-redux'
 // import {setNavSelectedItemKeyAction} from '../../store/action/action'
@@ -26,9 +26,9 @@ const F0F = () => {
           </div>
           <div className="bottom-404-box">
             走错路啦，快点
-          {/* <Link to="/"> */}
-            肥家
-          {/* </Link> */}
+            <Link href="/">
+              <a>肥家</a>
+            </Link>
           </div>
         </div>
       </div>

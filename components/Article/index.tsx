@@ -3,7 +3,7 @@ import React from 'react'
 import './style/index.less'
 
 import { Button, Row, Col, Icon, Avatar } from 'antd'
-// import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 const Article = (props: any) => {
   return (
@@ -36,11 +36,11 @@ const Article = (props: any) => {
                       Nest.js是Node.js版本的Spring
                     </Col>
                     <Col span={24} className="leftimg-right-item-fat">
-                      {/* <Link to="/detail"> */}
-                        <Button type="primary" shape="round" >
-                          Read
-                        </Button>
-                      {/* </Link> */}
+                      <Link href="/detail">
+                        <a>
+                          <Button type="primary" shape="round" >Read</Button>
+                        </a>
+                      </Link>
                     </Col>
                   </Col>
 
@@ -64,11 +64,11 @@ const Article = (props: any) => {
                       Nest.js是Node.js版本的Spring
                     </Col>
                     <Col span={24} className="rightimg-right-item-fat">
-                      {/* <Link to="/detail"> */}
-                        <Button type="primary" shape="round" >
-                          Read
-                        </Button>
-                      {/* </Link> */}
+                      <Link href="/detail">
+                        <a>
+                          <Button type="primary" shape="round" >Read</Button>
+                        </a>
+                      </Link>
                     </Col>
                   </Col>
                   <Col span={14} className="rightimg-left-box">
@@ -113,12 +113,11 @@ const Article = (props: any) => {
                       </Row>
                     </div>
                     <div className="mobile-bottom-right-box">
-
-                      {/* <Link to="/detail"> */}
-                        <Button type="primary" shape="round" size="default">
-                          Read
-                      </Button>
-                      {/* </Link> */}
+                      <Link href="/detail">
+                        <a>
+                          <Button type="primary" shape="round" size="default">Read</Button>
+                        </a>
+                      </Link>
                     </div>
                   </Col>
                 </Row>
