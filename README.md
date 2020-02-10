@@ -1,6 +1,6 @@
 # 【唯二主義】个人博客-前台部分
 ## 技术栈
-- React SRR
+- React SSR
   - React
   - Next
   - Rudex
