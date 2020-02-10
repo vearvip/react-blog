@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 // import { withRouter } from 'react-router-dom'
-import './index.less'
+import './style/index.less'
 // import { connect } from 'react-redux'
 // import { setNavSelectedItemKeyAction } from '../../store/action/action'
 // import QueueAnim from 'rc-queue-anim'
