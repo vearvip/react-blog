@@ -8,7 +8,7 @@ import './style/index.less'
 import Link from 'next/link'
 
 export const navList = [{
-  itemKey: 'home',
+  itemKey: 'index',
   iconType: 'crown',
   buttonVal: '首页',
   url: '/'
@@ -42,27 +42,27 @@ export const navList = [{
 import { Row, Col, Avatar, Menu, Icon, Button } from 'antd'
 // const { SubMenu } = Menu;
 
-const Nav = (props: any) => {
+const Nav = (props: {
+  navSelectedItemKey?: string
+}) => {
   const [sideHidden, setSideHidden] = useState(true)
-  // console.log('store', store.getState())
+  const {
+    navSelectedItemKey = ''
+  } = props
   const routerPush = (url: any, key: any) => {
     // console.log('props.setNavSelectedItemKeyAction', props.setNavSelectedItemKeyAction)
     // props.setNavSelectedItemKeyAction(key)
     setSideHidden(true)
     // props.history.push(url)
   }
-  // const printSomething = () => {
-  //   console.log(props.navSelectedItemKey)
-  //   props.setNavSelectedItemKeyAction('你妈的')
-  //   console.log(props.navSelectedItemKey)
-  // }
+  
   return (
     <nav>
       <Row className="row">
         <Col xs={0} sm={0} md={24} className="col">
           <div className="pc-box">
             {/* <Button onClick={printSomething}>走你</Button> */}
-            <Menu mode="horizontal" defaultSelectedKeys={['home']} selectedKeys={[props.navSelectedItemKey]}>
+            <Menu mode="horizontal" defaultSelectedKeys={['index']} selectedKeys={[navSelectedItemKey]}>
               {
                 navList.map(ele => {
                   return (
@@ -126,7 +126,7 @@ const Nav = (props: any) => {
 
                   </div>
 
-                  <Menu mode="inline" defaultSelectedKeys={['home']} selectedKeys={[props.navSelectedItemKey]}>
+                  <Menu mode="inline" defaultSelectedKeys={['index']} selectedKeys={[navSelectedItemKey]}>
                     {
                       navList.map(ele => {
                         return (

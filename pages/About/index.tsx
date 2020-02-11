@@ -57,7 +57,7 @@ const About = (props: any) => {
   // navSelectedItemKey !== 'about' && setNavSelectedItemKeyAction('about')
   return (
     <>
-      <Nav />
+      <Nav navSelectedItemKey="about" />
       <div className="about">
         <Above imgUrl={'https://s2.ax1x.com/2019/11/26/Mzb75Q.jpg'} />
         <div className="about-main">

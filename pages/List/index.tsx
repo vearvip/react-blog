@@ -29,7 +29,7 @@ const List = (props: any) => {
   // navSelectedItemKey !== 'list' && setNavSelectedItemKeyAction('list')
   return (
     <>
-      <Nav></Nav>
+      <Nav navSelectedItemKey="list" />
       <div className="list">
         <Above imgUrl={'https://s2.ax1x.com/2019/11/24/MXlH2R.png'} />
 

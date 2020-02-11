@@ -31,7 +31,7 @@ const Say = (props: any) => {
   // }
   return (
     <>
-      <Nav></Nav>
+      <Nav navSelectedItemKey="say" />
       <div className="say">
         <Above imgUrl={'https://s2.ax1x.com/2019/11/26/Mzb75Q.jpg'} />
         {/* <Button onClick={retTest}>retTest</Button> */}

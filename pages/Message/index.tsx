@@ -18,7 +18,7 @@ const LeaveMsg = (props: any) => {
   // navSelectedItemKey !== 'leave-msg' && setNavSelectedItemKeyAction('leave-msg')
   return (
     <>
-      <Nav />
+      <Nav navSelectedItemKey="message" />
       <div className="leave-msg">
         <Above imgUrl={'https://s2.ax1x.com/2019/11/27/QC4sXV.jpg'} />
         <div className="leave-msg-main">

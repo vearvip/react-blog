@@ -1,7 +1,8 @@
 const withLess = require('@zeit/next-less')
+const withCss = require('@zeit/next-css')
 
 
-module.exports = withLess({
+module.exports = withCss(withLess({
   lessLoaderOptions: {
     javascriptEnabled: true,
     modifyVars: {
@@ -9,4 +10,4 @@ module.exports = withLess({
       '@link-color': 'rgb(123, 123, 248)'
     }
   }
-})
+}))

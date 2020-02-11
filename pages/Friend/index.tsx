@@ -18,7 +18,7 @@ const Friend = (props: any) => {
   // navSelectedItemKey !== 'friend' && setNavSelectedItemKeyAction('friend')
   return (
     <>
-      <Nav />
+      <Nav navSelectedItemKey="friend" />
       <div className="friend">
         <Above imgUrl={'https://s2.ax1x.com/2019/11/27/QC4sXV.jpg'} />
         <div className="friend-main">
